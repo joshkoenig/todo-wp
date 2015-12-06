@@ -3,7 +3,6 @@
 /*jshint trailing:false */
 /*jshint newcap:false */
 var app = app || {};
-var auth_headers = {'Authorization': 'Basic YWRtaW46ZjAwZjAw'};
 
 (function () {
 	'use strict';
@@ -32,7 +31,7 @@ var auth_headers = {'Authorization': 'Basic YWRtaW46ZjAwZjAw'};
 	app.TodoModel.prototype.addTodo = function (title) {
 		var payload = 'title='+encodeURIComponent(title)+'&status=publish';
 		var result = jQuery.ajax('http://localhost:8080/wp-json/wp/v2/posts',
-                       {'headers': auth_headers, 'async': false,
+                       {'headers': headers, 'async': false,
                         'method': 'POST',
                         'data': payload
                        });
@@ -66,7 +65,7 @@ var auth_headers = {'Authorization': 'Basic YWRtaW46ZjAwZjAw'};
 			var new_title = todoToToggle.title + ' (done)';
 		}
 		var payload = 'title='+encodeURIComponent(new_title);
-		jQuery.ajax(url, {'headers': auth_headers,
+		jQuery.ajax(url, {'headers': headers,
 			                'method': 'PUT',
 			              	'data': payload});
 
@@ -84,7 +83,7 @@ var auth_headers = {'Authorization': 'Basic YWRtaW46ZjAwZjAw'};
 			return candidate !== todo;
 		});
 		var url = 'http://localhost:8080/wp-json/wp/v2/posts/' + todo.id;
-		jQuery.ajax(url, {'headers': auth_headers, 'method': 'DELETE'});
+		jQuery.ajax(url, {'headers': headers, 'method': 'DELETE'});
 
 		this.inform();
 	};
