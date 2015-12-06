@@ -1,13 +1,13 @@
 # todo-wp
 
-Inspired by (ToDoMVC)[http://todomvc.com], a proof-of-concept implementation of the TODO list, using React on the front and WordPress as a storage backend.
+Inspired by [ToDoMVC](http://todomvc.com), a proof-of-concept implementation of the TODO list, using React on the front and WordPress as a storage backend.
 
 ![React Screen](https://raw.github.com/joshkoenig/todo-wp/master/react_screen.png)
 ![WordPress Screen](https://raw.github.com/joshkoenig/todo-wp/master/wp_admin_screen.png)
 
 ## Vision
 
-The goal of this project is to help WordPress developers build their JavaScript skills, particularly around the use of the new REST API. This initial implementation is based on the (React example for ToDoMVC)[http://todomvc.com/examples/react/#/], but the vision is to inspire a number of example implementations.
+The goal of this project is to help WordPress developers build their JavaScript skills, particularly around the use of the new REST API. This initial implementation is based on the [React example for ToDoMVC](http://todomvc.com/examples/react/#/), but the vision is to inspire a number of example implementations.
 
 Currently the implementation is very simple. All posts on the WordPress site are considered TODO items, and their status of "done" or not is managed by simply adding or removing "(done)" from the title. 
 
@@ -15,16 +15,16 @@ The focus of this project will be to improve the quality of this example while m
 
 ## Requirements
 
-Setting up this example assumes you are running at least PHP 5.5 and are comfortable using command line tools, including (wp-cli)[http://wp-cli.org/], `php`, and `curl`.
+Setting up this example assumes you are running at least PHP 5.5 and are comfortable using command line tools, including [wp-cli](http://wp-cli.org/), `php`, and `curl`.
 
 Required tools:
 
-- (wp-cli)[http://wp-cli.org/]
-- (npm)[https://www.npmjs.com/]
+- [wp-cli](http://wp-cli.org/)
+- [npm](https://www.npmjs.com/)
 - mysql
 - php 5.5 or later
 
-For npm, php and mysql, (homebrew)[http://brew.sh/] is an excellent resource if you are on MacOS. 
+For npm, php and mysql, [homebrew](http://brew.sh/) is an excellent resource if you are on MacOS. 
 
 ## Running The Example
 
@@ -46,7 +46,7 @@ You can of course set up the initial WordPress however you like. Just be sure to
 
 ### Install and Activate the REST API Plugin
 
-Now it's time to install the (REST API plugin)[https://wordpress.org/plugins/rest-api/]:
+Now it's time to install the [REST API plugin](https://wordpress.org/plugins/rest-api/):
 
 ```bash
 wp plugin install rest-api
@@ -82,7 +82,7 @@ Document root is /Users/joshk/pantheon/todoWP/wp-backend
 Press Ctrl-C to quit.
 ```
 
-And if you open a browser and navigate to (http://localhost:8080)[http://localhost:8080] you'll see the site, can log in, etc. More importantly you can start poking at the REST API via curl.
+And if you open a browser and navigate to [http://localhost:8080](http://localhost:8080) you'll see the site, can log in, etc. More importantly you can start poking at the REST API via curl.
 
 Just to be sure it's working, make an `OPTIONS` request:
 
@@ -92,14 +92,35 @@ curl http://localhost:8080/wp-json/ -X OPTIONS
 You should get a JSON response like so:
 
 ```json
-{"namespace":"","methods":["GET"],"endpoints":[{"methods":["GET"],"args":{"context":{"required":false,"default":"view"}}}],"_links":{"self":"http:\/\/localhost:8080\/wp-json\/"}}
+{
+  "namespace": "",
+  "methods": [
+    "GET"
+  ],
+  "endpoints": [
+    {
+      "methods": [
+        "GET"
+      ],
+      "args": {
+        "context": {
+          "required": false,
+          "default": "view"
+        }
+      }
+    }
+  ],
+  "_links": {
+    "self": "http://localhost:8080/wp-json/"
+  }
+}
 ```
 
-You can pipe that response to a tool to more easily read it if you like, but so long as you're getting nice machine readible output, you're on the right path. If you get a screen full of HTML output, you've missed a step somewhere. 
+So long as you're getting nice machine readible output, you're on the right path. If you get a screen full of HTML output, you've missed a step somewhere. 
 
 ### Install and Activate Basic Auth
 
-For this example we will use the super-simple (Basic Auth)[https://github.com/WP-API/Basic-Auth] plugin to allow active use of the API.
+For this example we will use the super-simple [Basic Auth](https://github.com/WP-API/Basic-Auth) plugin to allow active use of the API.
 
 ```bash
 wp plugin install https://github.com/WP-API/Basic-Auth/archive/master.zip
@@ -144,7 +165,9 @@ Now launch another standalone webserver for the client. We can use the PHP built
 php -S localhost:8000
 ```
 
-Finally, open a new browser tab and (load the React app)[http://localhost:8000]. You should see the two existing posts on your site, and be in a position to add, check off, and even delete via React.
+You should now have two terminals running two different PHP webservers. The WordPress backend on `localhost:8080` and the React example on `localhost:8000`.
+
+Finally, open a new browser tab and [load the React app](http://localhost:8000). You should see the two existing posts on your site, and be in a position to add, check off, and even delete via React.
 
 ## Status
 
