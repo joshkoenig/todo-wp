@@ -1,6 +1,6 @@
-# todo-wp
+# TodoWP
 
-Inspired by [ToDoMVC](http://todomvc.com), a proof-of-concept implementation of the TODO list, using React on the front and WordPress as a storage backend.
+Inspired by [TodoMVC](http://todomvc.com), a proof-of-concept implementation of the TODO list, using React on the front and WordPress as a storage backend.
 
 ![React Screen](https://raw.github.com/joshkoenig/todo-wp/master/react_screen.png)
 ![WordPress Screen](https://raw.github.com/joshkoenig/todo-wp/master/wp_admin_screen.png)
@@ -126,6 +126,8 @@ For this example we will use the super-simple [Basic Auth](https://github.com/WP
 wp plugin install https://github.com/WP-API/Basic-Auth/archive/master.zip
 wp plugin activate Basic-Auth-master
 ```
+
+The Basic Auth plugin is only intended for development, as it requires you to add your credentials to your code. However, it works great to get up and running quickly. 
 
 ### Checkpoint 2 - Create a Post via Curl:
 
