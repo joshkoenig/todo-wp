@@ -1,5 +1,5 @@
 var app = app || {};
-var headers = {'Authorization': 'Basic YWRtaW46ZjAwZjAw'};
+var headers = {'Authorization': 'Basic ' + btoa('USER:PASS')};
 
 (function () {
 	'use strict';
