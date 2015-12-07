@@ -7,11 +7,11 @@ Inspired by [TodoMVC](http://todomvc.com), a proof-of-concept implementation of 
 
 ## Vision
 
-The goal of this project is to help WordPress developers build their JavaScript skills, particularly around the use of the new REST API. This initial implementation is based on the [React example for ToDoMVC](http://todomvc.com/examples/react/#/), but the vision is to inspire a number of example implementations.
+The goal of this project is to help WordPress developers build their JavaScript skills, particularly around the use of the new REST API. Currently the implementation is very simple. All posts on the WordPress site are considered TODO items, and their status of "done" or not is managed by simply adding or removing "(done)" from the title. 
 
-Currently the implementation is very simple. All posts on the WordPress site are considered TODO items, and their status of "done" or not is managed by simply adding or removing "(done)" from the title. 
+This initial implementation is based on the [React example for ToDoMVC](http://todomvc.com/examples/react/#/), but the vision is to have implementations for other frameworks WordPress is using widely (at a minimum backbone), as well as showcasing how to extend the REST API with custom endpoints.
 
-The focus of this project will be to improve the quality of this example while maintaining excellent tutorial documentation, so that developers can quickly get "up and running" with a working REST API implementation.
+The near-term focus will be to improve the quality of this example while maintaining excellent tutorial documentation, so that developers can quickly get "up and running" with a working REST API implementation. If other developers would like to contibute other framework examples, or help with examples for backend customization, that's very welcome!
 
 ## Requirements
 
