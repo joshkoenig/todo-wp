@@ -36,7 +36,7 @@ The following tutorial should get you up and running in about 10 minutes.
 
 ```bash
 echo "create database wp_backend" | mysql -u root
-wp core download wp-backend
+wp core download --path=wp-backend
 cd wp-backend
 wp core config --dbname=wp_backend --dbuser=root
 wp core install --url="localhost:8080" --title="WP MVC TODO" --admin_user="admin" --admin_password="bbqisdelicious" --admin_email="noreply@test.com"
